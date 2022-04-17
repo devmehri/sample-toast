@@ -4,10 +4,14 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        maven {
+            url 'C:\\Users\\dexguard\\DexGuard-9.2.11\\lib'       // For the DexGuard plugin.
+        }
     }
     dependencies {
         classpath "com.android.tools.build:gradle:4.2.1"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.guardsquare:dexguard-gradle-plugin:+'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -18,6 +22,9 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        repositories {
+            maven { url 'https://jitpack.io' }
+        }
         jcenter() // Warning: this repository is going to shut down soon
     }
 }
